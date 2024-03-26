@@ -1,0 +1,14 @@
+[
+ {
+  "doctype": "Custom Field",
+  "dt": "Customer",
+  "module": "Notification Sales Invoice",
+  "name": "last_sales_date",
+  "fieldname": "last_sales_date",
+  "fieldtype": "Date",
+  "label": "Last Sales Date",
+  "insert_after": "image",
+  "allow_on_submit": 1,
+  "sync_on_migrate": 1
+ }
+]

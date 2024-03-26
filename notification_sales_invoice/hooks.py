@@ -227,3 +227,43 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+
+
+
+# Scheduled Tasks
+# ---------------
+
+# scheduler_events = {
+# 	"hourly": [
+# 		"notification_sales_invoice.notification_sales_invoice.notification_sales_invoice.check_last_sales_date"
+# 	],
+# }
+
+
+
+scheduler_events = {
+    "cron": {
+        "*/2 * * * *": [
+            "notification_sales_invoice.notification_sales_invoice.notification_sales_invoice.check_last_sales_date",
+        ],
+    },
+    "hourly": [
+        "notification_sales_invoice.notification_sales_invoice.notification_sales_invoice.check_last_sales_date"
+    ],
+}
+
+
+
+# doc_events = {
+#     "Sales Invoice": {
+#         "on_submit": "notification_sales_invoice.notification_sales_invoice.notification_sales_invoice.update_last_sales_date_for_customer"
+#     }
+# }
+
+doctype_js = {
+    "Sales Invoice" : "public/js/sales_invoice.js" ,
+    }
+
+
+fixtures = [ {"dt": "Custom Field","filters": [["module", "=", "Notification Sales Invoice"]] }]
